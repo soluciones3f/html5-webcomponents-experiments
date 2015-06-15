@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Experiments with HTML5</title>
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+		<script src="flipflop.js"></script>
+
+		<style>
+			/* NOTE: container will be blue, but because of SHADOW DOM each tile will be red */
+			div { background-color: blue !important; }
+			#container { 
+				display: flex; flex-flow: row wrap; 
+				width: 524px; margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Experiments with HTML5</h1>
+		<ul>
+			<li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">Custom elements</a>. I want a custom-made syntactic html! I want my own tags with behaviour and style!
+			<li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/template/">Templates</a>. No more script type="template/x-handlebars-template" hack. Now we have Template html tag.
+			<li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/">Shadow DOM</a>. Each tile have its own CSS. And the page CSS does not affect the tiles. See the backgounds!
+			<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a>. I do not want space between the tiles!
+			<li><a href="http://greensock.com/gsap">GSAP</a>. Because I want some animations.
+		</ul>
+
+		<template id="tile">
+			<style> 
+				div {
+					border: 3px solid black; 
+					width: 256px; height: 256px; 
+					background-color: red; }
+			</style>
+			<div><img src="texture.png" /></div>
+		</template>
+
+		<div id="container">
+			<s3f-tile back-image="spade.png"></s3f-tile>
+			<s3f-tile back-image="heart.png"></s3f-tile>
+			<s3f-tile back-image="club.png"></s3f-tile>
+			<s3f-tile back-image="diamond.png"></s3f-tile>
+		</div>
+	</body>
+</html>
